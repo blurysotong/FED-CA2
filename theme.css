@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bodoni Moda", serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --color-ink: #02080c;
+  --color-paper: #ecf2ee;
+  --color-signal: #a8ffec;
+  --color-coral: #ff8c68;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: fade-out 180ms ease-in;
+}
+
+::view-transition-new(root) {
+  animation: fade-in 280ms ease-out;
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.progress-marker {
+  transform: translate(-50%, 1rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+  }
+}
