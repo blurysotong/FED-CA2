@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Barebones scrolling website template." />
-    <title>Page 01 / Template</title>
+    <meta
+      name="description"
+      content="Explore the ocean surface, where sunlight, air, and seawater meet."
+    />
+    <title>01 Surface / Ocean Depths</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,7 +19,67 @@
   </head>
   <body class="bg-ink font-mono text-paper" data-page="1">
     <main>
-      <section class="story-page relative min-h-svh bg-gradient-to-b from-[#0b6070] to-[#084252]" id="page-1"></section>
+      <section
+        class="story-page relative min-h-svh bg-gradient-to-b from-[#0b6070] to-[#084252]"
+        id="page-1"
+      >
+        <div
+          class="mx-auto flex min-h-svh w-full max-w-6xl flex-col px-6 py-8 sm:px-10 lg:px-16"
+        >
+          <header
+            class="flex items-center justify-between border-b border-paper/30 pb-4 text-xs uppercase tracking-[0.2em]"
+          >
+            <p>Ocean depths</p>
+            <p>01 / 12 · First layer · 0 m</p>
+          </header>
+
+          <div class="grid flex-1 items-center gap-10 py-12 lg:grid-cols-2">
+            <div>
+              <p class="mb-4 text-sm uppercase tracking-[0.25em] text-signal">
+                The threshold
+              </p>
+              <h1
+                class="font-serif text-6xl leading-none sm:text-7xl lg:text-8xl"
+              >
+                Surface
+              </h1>
+              <p class="mt-6 max-w-xl text-base leading-7 sm:text-lg">
+                The surface is the moving boundary between air and sea.
+                Sunlight enters the water here, while wind and waves keep the
+                upper ocean in constant motion.
+              </p>
+            </div>
+
+            <aside
+              class="border border-paper/30 bg-ink/20 p-6 sm:p-8"
+              aria-label="Surface facts"
+            >
+              <h2 class="font-serif text-2xl">At a glance</h2>
+              <dl class="mt-6 divide-y divide-paper/20">
+                <div class="grid grid-cols-2 gap-4 py-4">
+                  <dt class="text-paper/70">Depth</dt>
+                  <dd class="text-right text-coral">0 metres</dd>
+                </div>
+                <div class="grid grid-cols-2 gap-4 py-4">
+                  <dt class="text-paper/70">Light</dt>
+                  <dd class="text-right">Brightest here</dd>
+                </div>
+                <div class="grid grid-cols-2 gap-4 py-4">
+                  <dt class="text-paper/70">Connection</dt>
+                  <dd class="text-right">Air meets sea</dd>
+                </div>
+              </dl>
+            </aside>
+          </div>
+
+          <footer
+            class="flex items-center gap-3 border-t border-paper/30 pt-4 text-xs uppercase tracking-[0.2em]"
+          >
+            <span aria-hidden="true">↓</span>
+            <p>Scroll to follow the light</p>
+          </footer>
+        </div>
+      </section>
     </main>
   </body>
 </html>

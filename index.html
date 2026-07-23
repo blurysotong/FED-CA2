@@ -3,12 +3,400 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Barebones scrolling website template." />
-    <title>Scrolling Website Template</title>
+    <meta
+      name="description"
+      content="A scrolling introduction to twelve regions and ideas found across the ocean depths."
+    />
+    <title>Ocean Depths</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles.css" />
-    <script>
-      window.location.replace("./layers/first-layer/01-surface.html");
-    </script>
+    <script src="./app.js" defer></script>
   </head>
-  <body class="min-h-screen bg-gradient-to-b from-[#0b6070] to-[#084252]"></body>
+  <body class="bg-ink font-mono text-paper" data-mode="directory">
+    <main>
+      <section
+        class="relative flex min-h-svh items-end overflow-hidden bg-[#071d26] px-6 pb-12 pt-28 sm:px-10 lg:px-16"
+        id="home"
+      >
+        <div
+          class="absolute -right-24 top-28 size-80 rounded-full border border-signal/20 sm:right-10 sm:size-96"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="absolute right-8 top-48 size-48 rounded-full border border-paper/10 sm:right-40 sm:size-64"
+          aria-hidden="true"
+        ></div>
+
+        <div class="relative mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[1fr_18rem]">
+          <div>
+            <p class="mb-6 text-xs uppercase text-signal">A scrolling field guide</p>
+            <h1 class="max-w-5xl text-balance font-display text-6xl leading-none sm:text-8xl lg:text-9xl">
+              Below the blue line
+            </h1>
+            <p class="mt-8 max-w-2xl text-pretty text-base leading-7 text-paper/70 sm:text-lg">
+              Follow sunlight from the surface into total darkness. Twelve stops
+              introduce the pressure, habitats, adaptations, and research that
+              shape our understanding of the deep ocean.
+            </p>
+            <a
+              class="mt-10 inline-flex items-center gap-4 border border-signal px-6 py-4 text-xs uppercase text-signal hover:bg-signal hover:text-ink"
+              href="#overview"
+            >
+              Begin the descent <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+
+          <dl class="self-end border-t border-paper/20 text-sm">
+            <div class="flex justify-between border-b border-paper/20 py-4">
+              <dt class="text-paper/50">Directory</dt>
+              <dd>12 stops</dd>
+            </div>
+            <div class="flex justify-between border-b border-paper/20 py-4">
+              <dt class="text-paper/50">Layers</dt>
+              <dd>04 zones</dd>
+            </div>
+            <div class="flex justify-between border-b border-paper/20 py-4">
+              <dt class="text-paper/50">Range</dt>
+              <dd>0–6,000+ m</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section
+        class="relative flex min-h-svh items-center bg-[#084252] px-6 py-28 sm:px-10 lg:px-16"
+        id="overview"
+      >
+        <div class="mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
+          <div>
+            <p class="text-xs uppercase text-signal">How to explore</p>
+            <p class="mt-6 font-display text-4xl leading-tight sm:text-5xl">
+              The directory gives you the map. The layer pages take you deeper.
+            </p>
+          </div>
+
+          <div class="grid gap-8 sm:grid-cols-2">
+            <article class="border-t border-paper/30 pt-6">
+              <p class="text-xs text-coral">01</p>
+              <h2 class="mt-4 font-display text-3xl">Scroll the summaries</h2>
+              <p class="mt-4 text-pretty leading-7 text-paper/70">
+                Each full-screen stop offers a short introduction. The vertical
+                marker shows your progress through all twelve subjects.
+              </p>
+            </article>
+            <article class="border-t border-paper/30 pt-6">
+              <p class="text-xs text-coral">02</p>
+              <h2 class="mt-4 font-display text-3xl">Open a layer</h2>
+              <p class="mt-4 text-pretty leading-7 text-paper/70">
+                Select Read More to enter the matching detailed page. Each layer
+                contains three connected pages that can be explored continuously.
+              </p>
+            </article>
+            <a
+              class="sm:col-span-2 flex items-center justify-between border-y border-paper/30 py-6 text-xs uppercase text-signal hover:text-paper"
+              href="#summary-1"
+            >
+              Enter the twelve-part directory <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="directory-page relative flex min-h-svh items-center bg-gradient-to-b from-[#0b6070] to-[#084252] px-6 py-28 sm:px-10 lg:px-16"
+        data-summary="1"
+        id="summary-1"
+      >
+        <div class="mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[15rem_1fr]">
+          <div class="border-t border-paper/30 pt-5 text-xs uppercase">
+            <p class="text-signal">01 / 12</p>
+            <p class="mt-3 text-paper/60">First layer · 0 m</p>
+          </div>
+          <div>
+            <p class="text-xs uppercase text-coral">Where air meets water</p>
+            <h2 class="mt-5 text-balance font-display text-6xl sm:text-8xl">Surface</h2>
+            <p class="mt-6 max-w-2xl text-pretty text-lg leading-8 text-paper/70">
+              Wind, waves, and sunlight meet at the moving boundary between the
+              atmosphere and the ocean.
+            </p>
+            <a class="mt-10 inline-flex border-b border-signal pb-2 text-xs uppercase text-signal" href="./layers/first-layer/01-surface.html">
+              Read more about the surface →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="directory-page relative flex min-h-svh items-center bg-gradient-to-b from-[#084252] to-[#063443] px-6 py-28 sm:px-10 lg:px-16"
+        data-summary="2"
+        id="summary-2"
+      >
+        <div class="mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[15rem_1fr]">
+          <div class="border-t border-paper/30 pt-5 text-xs uppercase">
+            <p class="text-signal">02 / 12</p>
+            <p class="mt-3 text-paper/60">First layer · 0–200 m</p>
+          </div>
+          <div>
+            <p class="text-xs uppercase text-coral">The sunlit ocean</p>
+            <h2 class="mt-5 text-balance font-display text-6xl sm:text-8xl">Light</h2>
+            <p class="mt-6 max-w-2xl text-pretty text-lg leading-8 text-paper/70">
+              The photic zone receives enough sunlight for photosynthesis, but
+              every colour and ray weakens as it travels downward.
+            </p>
+            <a class="mt-10 inline-flex border-b border-signal pb-2 text-xs uppercase text-signal" href="./layers/first-layer/02-light.html">
+              Read more about light →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="directory-page relative flex min-h-svh items-center bg-gradient-to-b from-[#063443] to-[#052c39] px-6 py-28 sm:px-10 lg:px-16"
+        data-summary="3"
+        id="summary-3"
+      >
+        <div class="mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[15rem_1fr]">
+          <div class="border-t border-paper/30 pt-5 text-xs uppercase">
+            <p class="text-signal">03 / 12</p>
+            <p class="mt-3 text-paper/60">First layer · Coastal waters</p>
+          </div>
+          <div>
+            <p class="text-xs uppercase text-coral">A crowded habitat</p>
+            <h2 class="mt-5 text-balance font-display text-6xl sm:text-8xl">Reef</h2>
+            <p class="mt-6 max-w-2xl text-pretty text-lg leading-8 text-paper/70">
+              Coral reefs turn shallow, sunlit water into complex habitats where
+              many species find food, shelter, and breeding grounds.
+            </p>
+            <a class="mt-10 inline-flex border-b border-signal pb-2 text-xs uppercase text-signal" href="./layers/first-layer/03-reef.html">
+              Read more about reefs →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="directory-page relative flex min-h-svh items-center bg-gradient-to-b from-[#052c39] to-[#042531] px-6 py-28 sm:px-10 lg:px-16"
+        data-summary="4"
+        id="summary-4"
+      >
+        <div class="mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[15rem_1fr]">
+          <div class="border-t border-paper/30 pt-5 text-xs uppercase">
+            <p class="text-signal">04 / 12</p>
+            <p class="mt-3 text-paper/60">Second layer · 200–1,000 m</p>
+          </div>
+          <div>
+            <p class="text-xs uppercase text-coral">The last natural glow</p>
+            <h2 class="mt-5 text-balance font-display text-6xl sm:text-8xl">Twilight</h2>
+            <p class="mt-6 max-w-2xl text-pretty text-lg leading-8 text-paper/70">
+              Sunlight remains visible but is too weak for plants. Animals move
+              through a dim blue world between day above and darkness below.
+            </p>
+            <a class="mt-10 inline-flex border-b border-signal pb-2 text-xs uppercase text-signal" href="./layers/second-layer/04-twilight.html">
+              Read more about twilight →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="directory-page relative flex min-h-svh items-center bg-gradient-to-b from-[#042531] to-[#031e29] px-6 py-28 sm:px-10 lg:px-16"
+        data-summary="5"
+        id="summary-5"
+      >
+        <div class="mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[15rem_1fr]">
+          <div class="border-t border-paper/30 pt-5 text-xs uppercase">
+            <p class="text-signal">05 / 12</p>
+            <p class="mt-3 text-paper/60">Second layer · Increasing force</p>
+          </div>
+          <div>
+            <p class="text-xs uppercase text-coral">The weight of water</p>
+            <h2 class="mt-5 text-balance font-display text-6xl sm:text-8xl">Pressure</h2>
+            <p class="mt-6 max-w-2xl text-pretty text-lg leading-8 text-paper/70">
+              Pressure rises by roughly one atmosphere every ten metres,
+              influencing animal bodies and every vehicle sent into the deep.
+            </p>
+            <a class="mt-10 inline-flex border-b border-signal pb-2 text-xs uppercase text-signal" href="./layers/second-layer/05-pressure.html">
+              Read more about pressure →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="directory-page relative flex min-h-svh items-center bg-gradient-to-b from-[#031e29] to-[#031923] px-6 py-28 sm:px-10 lg:px-16"
+        data-summary="6"
+        id="summary-6"
+      >
+        <div class="mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[15rem_1fr]">
+          <div class="border-t border-paper/30 pt-5 text-xs uppercase">
+            <p class="text-signal">06 / 12</p>
+            <p class="mt-3 text-paper/60">Second layer · Living light</p>
+          </div>
+          <div>
+            <p class="text-xs uppercase text-coral">Signals in darkness</p>
+            <h2 class="mt-5 text-balance font-display text-6xl sm:text-8xl">Glow</h2>
+            <p class="mt-6 max-w-2xl text-pretty text-lg leading-8 text-paper/70">
+              Bioluminescent animals produce their own light to hunt, hide,
+              communicate, or confuse predators in the dim ocean.
+            </p>
+            <a class="mt-10 inline-flex border-b border-signal pb-2 text-xs uppercase text-signal" href="./layers/second-layer/06-glow.html">
+              Read more about bioluminescence →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="directory-page relative flex min-h-svh items-center bg-gradient-to-b from-[#031923] to-[#02151d] px-6 py-28 sm:px-10 lg:px-16"
+        data-summary="7"
+        id="summary-7"
+      >
+        <div class="mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[15rem_1fr]">
+          <div class="border-t border-paper/30 pt-5 text-xs uppercase">
+            <p class="text-signal">07 / 12</p>
+            <p class="mt-3 text-paper/60">Third layer · 1,000–4,000 m</p>
+          </div>
+          <div>
+            <p class="text-xs uppercase text-coral">Beyond the sunlight</p>
+            <h2 class="mt-5 text-balance font-display text-6xl sm:text-8xl">Descent</h2>
+            <p class="mt-6 max-w-2xl text-pretty text-lg leading-8 text-paper/70">
+              The midnight zone begins in permanent darkness, with colder water,
+              scarce food, and vast distances between living things.
+            </p>
+            <a class="mt-10 inline-flex border-b border-signal pb-2 text-xs uppercase text-signal" href="./layers/third-layer/07-descent.html">
+              Read more about the descent →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="directory-page relative flex min-h-svh items-center bg-gradient-to-b from-[#02151d] to-[#021119] px-6 py-28 sm:px-10 lg:px-16"
+        data-summary="8"
+        id="summary-8"
+      >
+        <div class="mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[15rem_1fr]">
+          <div class="border-t border-paper/30 pt-5 text-xs uppercase">
+            <p class="text-signal">08 / 12</p>
+            <p class="mt-3 text-paper/60">Third layer · Deep-sea bodies</p>
+          </div>
+          <div>
+            <p class="text-xs uppercase text-coral">Built for extremes</p>
+            <h2 class="mt-5 text-balance font-display text-6xl sm:text-8xl">Adapt</h2>
+            <p class="mt-6 max-w-2xl text-pretty text-lg leading-8 text-paper/70">
+              Flexible bodies, slow metabolisms, sensitive senses, and unusual
+              chemistry allow animals to survive cold, darkness, and pressure.
+            </p>
+            <a class="mt-10 inline-flex border-b border-signal pb-2 text-xs uppercase text-signal" href="./layers/third-layer/08-adapt.html">
+              Read more about adaptation →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="directory-page relative flex min-h-svh items-center bg-gradient-to-b from-[#021119] to-[#020e15] px-6 py-28 sm:px-10 lg:px-16"
+        data-summary="9"
+        id="summary-9"
+      >
+        <div class="mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[15rem_1fr]">
+          <div class="border-t border-paper/30 pt-5 text-xs uppercase">
+            <p class="text-signal">09 / 12</p>
+            <p class="mt-3 text-paper/60">Third layer · Falling food</p>
+          </div>
+          <div>
+            <p class="text-xs uppercase text-coral">A slow underwater snowfall</p>
+            <h2 class="mt-5 text-balance font-display text-6xl sm:text-8xl">Marine snow</h2>
+            <p class="mt-6 max-w-2xl text-pretty text-lg leading-8 text-paper/70">
+              Tiny pieces of organic material drift down from surface waters,
+              carrying energy to communities far below the reach of sunlight.
+            </p>
+            <a class="mt-10 inline-flex border-b border-signal pb-2 text-xs uppercase text-signal" href="./layers/third-layer/09-snow.html">
+              Read more about marine snow →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="directory-page relative flex min-h-svh items-center bg-gradient-to-b from-[#020e15] to-[#020b11] px-6 py-28 sm:px-10 lg:px-16"
+        data-summary="10"
+        id="summary-10"
+      >
+        <div class="mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[15rem_1fr]">
+          <div class="border-t border-paper/30 pt-5 text-xs uppercase">
+            <p class="text-signal">10 / 12</p>
+            <p class="mt-3 text-paper/60">Fourth layer · 4,000–6,000 m</p>
+          </div>
+          <div>
+            <p class="text-xs uppercase text-coral">The deep plain</p>
+            <h2 class="mt-5 text-balance font-display text-6xl sm:text-8xl">Abyss</h2>
+            <p class="mt-6 max-w-2xl text-pretty text-lg leading-8 text-paper/70">
+              Broad abyssal plains cover much of the seafloor, appearing still
+              and empty while supporting slow, specialised ecosystems.
+            </p>
+            <a class="mt-10 inline-flex border-b border-signal pb-2 text-xs uppercase text-signal" href="./layers/fourth-layer/10-abyss.html">
+              Read more about the abyss →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="directory-page relative flex min-h-svh items-center bg-gradient-to-b from-[#020b11] to-[#01080d] px-6 py-28 sm:px-10 lg:px-16"
+        data-summary="11"
+        id="summary-11"
+      >
+        <div class="mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[15rem_1fr]">
+          <div class="border-t border-paper/30 pt-5 text-xs uppercase">
+            <p class="text-signal">11 / 12</p>
+            <p class="mt-3 text-paper/60">Fourth layer · Seafloor energy</p>
+          </div>
+          <div>
+            <p class="text-xs uppercase text-coral">Life without sunlight</p>
+            <h2 class="mt-5 text-balance font-display text-6xl sm:text-8xl">Vents</h2>
+            <p class="mt-6 max-w-2xl text-pretty text-lg leading-8 text-paper/70">
+              Hydrothermal vents release mineral-rich water. Microbes use
+              chemical energy to support entire communities around them.
+            </p>
+            <a class="mt-10 inline-flex border-b border-signal pb-2 text-xs uppercase text-signal" href="./layers/fourth-layer/11-vents.html">
+              Read more about vents →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="directory-page relative flex min-h-svh items-center bg-gradient-to-b from-[#01080d] to-[#010609] px-6 py-28 sm:px-10 lg:px-16"
+        data-summary="12"
+        id="summary-12"
+      >
+        <div class="mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[15rem_1fr]">
+          <div class="border-t border-paper/30 pt-5 text-xs uppercase">
+            <p class="text-signal">12 / 12</p>
+            <p class="mt-3 text-paper/60">Fourth layer · The frontier</p>
+          </div>
+          <div>
+            <p class="text-xs uppercase text-coral">The next careful step</p>
+            <h2 class="mt-5 text-balance font-display text-6xl sm:text-8xl">Explore</h2>
+            <p class="mt-6 max-w-2xl text-pretty text-lg leading-8 text-paper/70">
+              Modern submersibles and robots reveal unfamiliar species and
+              landscapes while responsible research protects fragile habitats.
+            </p>
+            <a class="mt-10 inline-flex border-b border-signal pb-2 text-xs uppercase text-signal" href="./layers/fourth-layer/12-gate.html">
+              Read more about the research frontier →
+            </a>
+            <a class="mt-12 block text-xs uppercase text-paper/50 hover:text-signal" href="#home">
+              Return to the surface ↑
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

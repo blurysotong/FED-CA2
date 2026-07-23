@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Barebones scrolling website template." />
-    <title>Page 10 / Template</title>
+    <meta name="description" content="A beginner-friendly introduction to the cold, quiet abyssal plains." />
+    <title>Page 10 / The Abyss</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,7 +16,74 @@
   </head>
   <body class="bg-ink font-mono text-paper" data-page="10">
     <main>
-      <section class="story-page relative min-h-svh bg-gradient-to-b from-[#020e15] to-[#020b11]" id="page-10"></section>
+      <section class="story-page relative min-h-svh bg-gradient-to-b from-[#020e15] to-[#020b11]"
+        id="page-10">
+        <div class="mx-auto flex min-h-svh w-full max-w-6xl flex-col px-6 py-10 md:px-10">
+          <header class="flex items-center justify-between gap-4 border-b border-white/20 pb-5 text-xs tracking-widest text-paper/60">
+            <p>
+              <span class="text-signal">10</span>
+              / 12 · Fourth layer
+            </p>
+            <p class="text-right">4,000–6,000 m</p>
+          </header>
+
+          <div class="grid flex-1 items-center gap-8 py-12 lg:grid-cols-2 lg:gap-16">
+            <article class="max-w-3xl">
+              <p class="mb-4 text-xs uppercase tracking-[0.25em] text-coral">
+                The abyssal zone
+              </p>
+              <h1 class="font-display text-5xl leading-tight text-paper sm:text-7xl">
+                The quiet floor
+              </h1>
+              <p class="mt-6 max-w-2xl text-base leading-relaxed text-paper/70 sm:text-lg">
+                Far below the sunlit ocean, broad abyssal plains stretch across
+                the seafloor. The water here is cold, dark, and usually very
+                still, yet small animals continue to find food and shelter.
+              </p>
+            </article>
+
+            <aside class="border border-signal/30 bg-ink/80 p-6" aria-labelledby="abyss-facts">
+              <h2 class="font-display text-2xl text-signal" id="abyss-facts">
+                Abyss at a glance
+              </h2>
+              <dl class="mt-6 grid gap-5">
+                <div class="border-t border-white/20 pt-4">
+                  <dt class="text-xs uppercase tracking-widest text-coral">
+                    Depth
+                  </dt>
+                  <dd class="mt-2 text-sm leading-relaxed text-paper/70">
+                    Abyssal plains are commonly found between 4,000 and 6,000
+                    metres below the surface.
+                  </dd>
+                </div>
+                <div class="border-t border-white/20 pt-4">
+                  <dt class="text-xs uppercase tracking-widest text-coral">
+                    Conditions
+                  </dt>
+                  <dd class="mt-2 text-sm leading-relaxed text-paper/70">
+                    Sunlight does not reach this depth. Temperatures stay near
+                    freezing, and the pressure is immense.
+                  </dd>
+                </div>
+                <div class="border-t border-white/20 pt-4">
+                  <dt class="text-xs uppercase tracking-widest text-coral">
+                    Food
+                  </dt>
+                  <dd class="mt-2 text-sm leading-relaxed text-paper/70">
+                    Many animals depend on tiny particles that drift down from
+                    the ocean above.
+                  </dd>
+                </div>
+              </dl>
+            </aside>
+          </div>
+
+          <footer class="flex items-center gap-4 border-t border-white/20 pt-5 text-xs uppercase tracking-widest text-paper/60">
+            <span class="h-px w-16 bg-signal" aria-hidden="true"></span>
+            <p>Scroll to find warmth in the dark</p>
+          </footer>
+        </div>
+      </section>
     </main>
   </body>
 </html>

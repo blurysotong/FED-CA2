@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Barebones scrolling website template." />
-    <title>Page 02 / Template</title>
+    <meta
+      name="description"
+      content="Enter the sunlit ocean, where light fades from the surface to 200 metres."
+    />
+    <title>02 Sunlight / Ocean Depths</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,7 +19,67 @@
   </head>
   <body class="bg-ink font-mono text-paper" data-page="2">
     <main>
-      <section class="story-page relative min-h-svh bg-gradient-to-b from-[#084252] to-[#063443]" id="page-2"></section>
+      <section
+        class="story-page relative min-h-svh bg-gradient-to-b from-[#084252] to-[#063443]"
+        id="page-2"
+      >
+        <div
+          class="mx-auto flex min-h-svh w-full max-w-6xl flex-col px-6 py-8 sm:px-10 lg:px-16"
+        >
+          <header
+            class="flex items-center justify-between border-b border-paper/30 pb-4 text-xs uppercase tracking-[0.2em]"
+          >
+            <p>Ocean depths</p>
+            <p>02 / 12 · First layer · 0–200 m</p>
+          </header>
+
+          <div class="grid flex-1 items-center gap-10 py-12 lg:grid-cols-2">
+            <div>
+              <p class="mb-4 text-sm uppercase tracking-[0.25em] text-signal">
+                The photic zone
+              </p>
+              <h1
+                class="font-serif text-6xl leading-none sm:text-7xl lg:text-8xl"
+              >
+                Sunlight
+              </h1>
+              <p class="mt-6 max-w-xl text-base leading-7 sm:text-lg">
+                The upper ocean is called the photic zone because sunlight
+                reaches through it. The water absorbs light as it travels
+                downward, so every metre becomes a little dimmer.
+              </p>
+            </div>
+
+            <aside
+              class="border border-paper/30 bg-ink/20 p-6 sm:p-8"
+              aria-label="Sunlight zone facts"
+            >
+              <h2 class="font-serif text-2xl">At a glance</h2>
+              <dl class="mt-6 divide-y divide-paper/20">
+                <div class="grid grid-cols-2 gap-4 py-4">
+                  <dt class="text-paper/70">Range</dt>
+                  <dd class="text-right text-coral">About 0–200 m</dd>
+                </div>
+                <div class="grid grid-cols-2 gap-4 py-4">
+                  <dt class="text-paper/70">Other name</dt>
+                  <dd class="text-right">Photic zone</dd>
+                </div>
+                <div class="grid grid-cols-2 gap-4 py-4">
+                  <dt class="text-paper/70">Change</dt>
+                  <dd class="text-right">Light fades</dd>
+                </div>
+              </dl>
+            </aside>
+          </div>
+
+          <footer
+            class="flex items-center gap-3 border-t border-paper/30 pt-4 text-xs uppercase tracking-[0.2em]"
+          >
+            <span aria-hidden="true">↓</span>
+            <p>Scroll toward the reef</p>
+          </footer>
+        </div>
+      </section>
     </main>
   </body>
 </html>

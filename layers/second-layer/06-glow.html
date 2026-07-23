@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Barebones scrolling website template." />
-    <title>Page 06 / Template</title>
+    <meta
+      name="description"
+      content="Discover how deep-sea animals use bioluminescence for hunting, defence, and communication."
+    />
+    <title>06 Glow / Ocean Depths</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,7 +19,72 @@
   </head>
   <body class="bg-ink font-mono text-paper" data-page="6">
     <main>
-      <section class="story-page relative min-h-svh bg-gradient-to-b from-[#031e29] to-[#031923]" id="page-6"></section>
+      <section
+        class="story-page relative min-h-svh overflow-hidden bg-gradient-to-b from-[#031e29] to-[#031923]"
+        id="page-6"
+      >
+        <div
+          class="absolute right-[14%] top-[20%] h-3 w-3 rounded-full bg-signal shadow-[0_0_40px_12px_rgba(126,249,255,0.2)]"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="absolute bottom-[20%] left-[8%] h-2 w-2 rounded-full bg-coral/70"
+          aria-hidden="true"
+        ></div>
+
+        <div class="relative mx-auto flex min-h-svh max-w-7xl flex-col px-6 py-8 sm:px-10 lg:px-16">
+          <header class="flex items-start justify-between gap-6 border-b border-paper/20 pb-4 text-xs uppercase tracking-[0.24em]">
+            <p><span class="text-signal">06</span> / Second layer</p>
+            <p class="text-right text-paper/70">Living light<br />Bioluminescence</p>
+          </header>
+
+          <div class="grid flex-1 items-center gap-10 py-14 lg:grid-cols-[1.35fr_0.65fr] lg:gap-20">
+            <div>
+              <p class="mb-5 text-xs uppercase tracking-[0.3em] text-coral">A signal in the dark</p>
+              <h1 class="font-serif text-6xl leading-[0.9] sm:text-7xl lg:text-9xl">
+                Glow
+              </h1>
+              <p class="mt-8 max-w-2xl text-base leading-7 text-paper/80 sm:text-lg">
+                Bioluminescence is light made by a living organism through a
+                chemical reaction. In dark water, a tiny flash can attract prey,
+                confuse a predator, or send a message to another animal.
+              </p>
+            </div>
+
+            <aside
+              class="border border-paper/20 bg-ink/20 p-6 backdrop-blur-sm sm:p-8"
+              aria-labelledby="glow-facts"
+            >
+              <h2 id="glow-facts" class="font-serif text-3xl text-signal">
+                Why make light?
+              </h2>
+              <dl class="mt-6 divide-y divide-paper/15">
+                <div class="py-4">
+                  <dt class="text-xs uppercase tracking-[0.2em] text-coral">Hunting</dt>
+                  <dd class="mt-2 leading-6 text-paper/80">A glowing lure can draw curious prey within reach.</dd>
+                </div>
+                <div class="py-4">
+                  <dt class="text-xs uppercase tracking-[0.2em] text-coral">Defence</dt>
+                  <dd class="mt-2 leading-6 text-paper/80">A sudden flash can startle predators or hide an animal's outline.</dd>
+                </div>
+                <div class="py-4">
+                  <dt class="text-xs uppercase tracking-[0.2em] text-coral">Communication</dt>
+                  <dd class="mt-2 leading-6 text-paper/80">Patterns of light can help animals recognise or find one another.</dd>
+                </div>
+              </dl>
+            </aside>
+          </div>
+
+          <footer class="flex items-end justify-between gap-6 border-t border-paper/20 pt-4">
+            <p class="max-w-sm text-xs leading-5 text-paper/60">
+              Below the twilight zone, natural sunlight disappears completely.
+            </p>
+            <p class="text-right text-xs uppercase tracking-[0.24em] text-signal">
+              Scroll<br /><span class="text-paper">Deeper ↓</span>
+            </p>
+          </footer>
+        </div>
+      </section>
     </main>
   </body>
 </html>

@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Barebones scrolling website template." />
-    <title>Page 09 / Template</title>
+    <meta name="description" content="Learn how marine snow carries tiny pieces of organic matter from the surface to deep-ocean animals." />
+    <title>Page 09 / Marine Snow</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,7 +16,66 @@
   </head>
   <body class="bg-ink font-mono text-paper" data-page="9">
     <main>
-      <section class="story-page relative min-h-svh bg-gradient-to-b from-[#021119] to-[#020e15]" id="page-9"></section>
+      <section class="story-page relative min-h-svh overflow-hidden bg-gradient-to-b from-[#021119] to-[#020e15]" id="page-9">
+        <div class="absolute right-16 top-24 h-2 w-2 rounded-full bg-signal/30" aria-hidden="true"></div>
+        <div class="absolute left-1/4 top-1/3 h-1 w-1 rounded-full bg-paper/40" aria-hidden="true"></div>
+        <div class="absolute bottom-32 right-1/3 h-1.5 w-1.5 rounded-full bg-coral/30" aria-hidden="true"></div>
+
+        <div class="relative z-10 mx-auto flex min-h-svh w-full max-w-6xl flex-col px-6 py-8 sm:px-10 sm:py-12">
+          <header class="flex items-center justify-between gap-6 border-b border-paper/20 pb-4 text-xs uppercase tracking-[0.2em]">
+            <p class="text-signal">Layer three</p>
+            <p class="text-paper/60">09 / 12</p>
+          </header>
+
+          <div class="my-auto grid gap-12 py-16 lg:grid-cols-[1.4fr_0.8fr] lg:items-end">
+            <div>
+              <p class="mb-5 text-sm uppercase tracking-[0.25em] text-coral">
+                Food from above
+              </p>
+              <h1 class="max-w-4xl font-display text-6xl leading-[0.9] tracking-tight text-paper sm:text-7xl lg:text-8xl">
+                Marine snow
+              </h1>
+              <p class="mt-7 max-w-2xl text-base leading-7 text-paper/75 sm:text-lg">
+                Tiny pieces of organic matter drift down from brighter water.
+                Together they look like snow, and they carry precious food to
+                animals living far below the sunlit surface.
+              </p>
+            </div>
+
+            <aside class="border border-paper/20 bg-ink/30 p-6 sm:p-8" aria-label="Marine snow facts">
+              <p class="mb-6 text-xs uppercase tracking-[0.2em] text-signal">
+                A slow food delivery
+              </p>
+              <dl class="space-y-6">
+                <div>
+                  <dt class="font-display text-2xl text-paper">What it is</dt>
+                  <dd class="mt-2 text-sm leading-6 text-paper/65">
+                    Bits of plankton, waste, mucus, and other organic material.
+                  </dd>
+                </div>
+                <div class="border-t border-paper/15 pt-6">
+                  <dt class="font-display text-2xl text-paper">Where it goes</dt>
+                  <dd class="mt-2 text-sm leading-6 text-paper/65">
+                    Flakes sink slowly through the water, sometimes reaching
+                    the seafloor.
+                  </dd>
+                </div>
+                <div class="border-t border-paper/15 pt-6">
+                  <dt class="font-display text-2xl text-paper">Why it matters</dt>
+                  <dd class="mt-2 text-sm leading-6 text-paper/65">
+                    It feeds deep-ocean life where plants cannot grow.
+                  </dd>
+                </div>
+              </dl>
+            </aside>
+          </div>
+
+          <footer class="flex items-center gap-4 text-xs uppercase tracking-[0.2em] text-paper/55">
+            <span class="h-px w-12 bg-coral" aria-hidden="true"></span>
+            <p>Keep scrolling through the falling snow</p>
+          </footer>
+        </div>
+      </section>
     </main>
   </body>
 </html>

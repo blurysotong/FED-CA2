@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Barebones scrolling website template." />
-    <title>Page 08 / Template</title>
+    <meta name="description" content="Discover how soft bodies, slow metabolisms, and pressure-resistant biology help deep-sea animals survive." />
+    <title>Page 08 / Adapt</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,7 +16,65 @@
   </head>
   <body class="bg-ink font-mono text-paper" data-page="8">
     <main>
-      <section class="story-page relative min-h-svh bg-gradient-to-b from-[#02151d] to-[#021119]" id="page-8"></section>
+      <section class="story-page relative min-h-svh overflow-hidden bg-gradient-to-b from-[#02151d] to-[#021119]" id="page-8">
+        <div class="absolute -left-32 bottom-20 h-80 w-80 rounded-full border border-coral/10" aria-hidden="true"></div>
+
+        <div class="relative z-10 mx-auto flex min-h-svh w-full max-w-6xl flex-col px-6 py-8 sm:px-10 sm:py-12">
+          <header class="flex items-center justify-between gap-6 border-b border-paper/20 pb-4 text-xs uppercase tracking-[0.2em]">
+            <p class="text-signal">Layer three</p>
+            <p class="text-paper/60">08 / 12</p>
+          </header>
+
+          <div class="my-auto grid gap-12 py-16 lg:grid-cols-[1.4fr_0.8fr] lg:items-end">
+            <div>
+              <p class="mb-5 text-sm uppercase tracking-[0.25em] text-coral">
+                Built for pressure
+              </p>
+              <h1 class="max-w-4xl font-display text-6xl leading-[0.9] tracking-tight text-paper sm:text-7xl lg:text-8xl">
+                Adapt to the deep
+              </h1>
+              <p class="mt-7 max-w-2xl text-base leading-7 text-paper/75 sm:text-lg">
+                Deep-sea animals cannot escape the weight of the water above
+                them. Instead, their bodies have changed over many generations
+                to work in high pressure, low temperatures, and scarce food.
+              </p>
+            </div>
+
+            <aside class="border border-paper/20 bg-ink/30 p-6 sm:p-8" aria-label="Deep-sea adaptation facts">
+              <p class="mb-6 text-xs uppercase tracking-[0.2em] text-signal">
+                Survival toolkit
+              </p>
+              <dl class="space-y-6">
+                <div>
+                  <dt class="font-display text-2xl text-paper">Soft bodies</dt>
+                  <dd class="mt-2 text-sm leading-6 text-paper/65">
+                    Flexible tissue contains fewer air spaces that pressure can
+                    crush.
+                  </dd>
+                </div>
+                <div class="border-t border-paper/15 pt-6">
+                  <dt class="font-display text-2xl text-paper">Slow energy use</dt>
+                  <dd class="mt-2 text-sm leading-6 text-paper/65">
+                    A slow metabolism helps limited meals last for longer.
+                  </dd>
+                </div>
+                <div class="border-t border-paper/15 pt-6">
+                  <dt class="font-display text-2xl text-paper">Stable cells</dt>
+                  <dd class="mt-2 text-sm leading-6 text-paper/65">
+                    Special molecules help proteins keep their shape under
+                    intense pressure.
+                  </dd>
+                </div>
+              </dl>
+            </aside>
+          </div>
+
+          <footer class="flex items-center gap-4 text-xs uppercase tracking-[0.2em] text-paper/55">
+            <span class="h-px w-12 bg-coral" aria-hidden="true"></span>
+            <p>Keep scrolling to follow food from above</p>
+          </footer>
+        </div>
+      </section>
     </main>
   </body>
 </html>
