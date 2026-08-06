@@ -25,6 +25,8 @@ const chapters = [
   ["IV", "Abyssal layer"],
 ];
 
+const depthStops = [0, 200, 1000, 4000, 6000];
+
 function twoDigits(index) {
   return String(index + 1).padStart(2, "0");
 }
@@ -119,9 +121,9 @@ function createProgress() {
         <div class="absolute inset-y-0 left-1/2 w-px bg-paper/25"></div>
         <div class="progress-fill absolute inset-y-0 left-1/2 w-px origin-top bg-signal"></div>
         <div class="progress-marker absolute left-1/2 top-0 grid h-8 w-16 place-items-center border border-signal bg-[#061820] text-[9px] text-signal">
-          <span id="depth-status">01 / 12</span>
+          <span id="depth-status">0 m</span>
         </div>
-        <input class="progress-control absolute inset-0 z-10 h-full w-full opacity-0" type="range" min="0" max="100" step="1" value="0" aria-label="Directory progress" aria-valuetext="01 of 12" tabindex="-1" />
+        <input class="progress-control absolute inset-0 z-10 h-full w-full opacity-0" type="range" min="0" max="100" step="1" value="0" aria-label="Directory depth" aria-valuetext="0 metres" tabindex="-1" />
       </div>
     `,
   );
@@ -172,15 +174,37 @@ function updateMenu(index) {
 function getProgressMetrics() {
   const firstSection = document.querySelector("#summary-1");
   const lastSection = document.querySelector("#summary-12");
-  if (!firstSection || !lastSection) return null;
+  const depthSections = [1, 4, 7, 10].map((index) =>
+    document.querySelector(`#summary-${index}`),
+  );
+  if (!firstSection || !lastSection || depthSections.some((section) => !section)) {
+    return null;
+  }
 
   const start = firstSection.offsetTop;
   const end = lastSection.offsetTop + lastSection.offsetHeight - window.innerHeight;
-  return { start, distance: Math.max(end - start, 1) };
+  return {
+    start,
+    distance: Math.max(end - start, 1),
+    depthAnchors: [...depthSections.map((section) => section.offsetTop), end],
+  };
 }
 
 function clampProgress(progress) {
   return Math.min(Math.max(progress, 0), 1);
+}
+
+function depthAtPosition(position, anchors) {
+  const nextAnchor = anchors.findIndex((anchor) => position < anchor);
+  const segment =
+    nextAnchor === -1 ? depthStops.length - 2 : Math.max(nextAnchor - 1, 0);
+  const segmentProgress = clampProgress(
+    (position - anchors[segment]) / Math.max(anchors[segment + 1] - anchors[segment], 1),
+  );
+  const depth =
+    depthStops[segment] +
+    segmentProgress * (depthStops[segment + 1] - depthStops[segment]);
+  return Math.round(depth / 10) * 10;
 }
 
 function updateProgress() {
@@ -193,6 +217,8 @@ function updateProgress() {
   if (!metrics || !fill || !marker || !progressRail || !progressControl) return;
 
   const progress = clampProgress((window.scrollY - metrics.start) / metrics.distance);
+  const depth = depthAtPosition(window.scrollY, metrics.depthAnchors);
+  const formattedDepth = depth.toLocaleString();
   const markerDistance = Math.max(progressRail.offsetHeight - marker.offsetHeight, 0);
   const visible = window.scrollY >= metrics.start - 1;
 
@@ -200,11 +226,14 @@ function updateProgress() {
   progressRail.classList.toggle("pointer-events-none", !visible);
   progressControl.tabIndex = visible ? 0 : -1;
   progressRail.setAttribute("aria-hidden", String(!visible));
-  progressControl.value = String(Math.round(progress * 100));
+  if (!progressControl.matches(":active")) {
+    progressControl.value = String(Math.round(progress * 100));
+  }
   progressControl.setAttribute(
     "aria-valuetext",
-    `${twoDigits(Math.round(progress * (pages.length - 1)))} of 12`,
+    `${formattedDepth} metres`,
   );
+  document.querySelector("#depth-status").textContent = `${formattedDepth} m`;
   fill.style.transform = `scaleY(${progress})`;
   marker.style.transform = `translate(-50%, ${progress * markerDistance}px)`;
 }
@@ -224,12 +253,7 @@ function enableProgressNavigation() {
   if (!progressControl) return;
 
   progressControl.addEventListener("input", () => {
-    document.documentElement.classList.remove("scroll-smooth");
-    scrollToProgress(progressControl.valueAsNumber / 100);
-  });
-
-  progressControl.addEventListener("change", () => {
-    requestAnimationFrame(() => document.documentElement.classList.add("scroll-smooth"));
+    scrollToProgress(progressControl.valueAsNumber / 100, "smooth");
   });
 }
 
@@ -248,7 +272,6 @@ function observeDirectory() {
       if (!active) return;
       const index = Number(active.target.dataset.summary) - 1;
       updateMenu(index);
-      document.querySelector("#depth-status").textContent = `${twoDigits(index)} / 12`;
     },
     { threshold: 0.5 },
   );
