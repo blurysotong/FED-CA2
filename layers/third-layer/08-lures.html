@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Reveal the bioluminescent hunters and alarm systems of the Bathypelagic Midnight Zone."
+    />
+    <title>08 Lures / The Midnight Zone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script src="../../app.js" defer></script>
+    <script src="./third-layer.js" defer></script>
+  </head>
+  <body class="bg-dive-black font-dive-mono text-dive-paper" data-page="8" data-layer-theme="dossier">
+    <main>
+      <section
+        class="story-page dive-page relative min-h-svh overflow-hidden bg-dive-black"
+        id="page-8"
+        data-night-vision-stage
+      >
+        <div class="dive-scratches pointer-events-none absolute inset-0" aria-hidden="true"></div>
+
+        <div class="relative z-10 mx-auto min-h-svh w-full max-w-[92rem] px-4 pb-10 pt-5 sm:px-7 lg:px-10">
+          <header class="flex items-start justify-between border-b border-dive-paper/20 pb-5 text-[10px] uppercase tracking-[0.13em] text-dive-paper/50">
+            <div>
+              <p class="text-dive-paper">Field note 08</p>
+              <p class="mt-1 text-[9px]">No natural light detected</p>
+            </div>
+            <p class="dive-title font-dive-display text-xl">Creatures</p>
+          </header>
+
+          <section class="grid border-b border-dive-paper/20 py-10 sm:py-14 lg:grid-cols-[1.08fr_0.92fr] lg:items-center" aria-labelledby="vision-title">
+            <div class="relative z-10 lg:pr-12">
+              <h1 class="dive-title text-3xl sm:text-5xl" id="vision-title">The darkness</h1>
+              <div class="dive-copy mt-7 max-w-2xl text-sm sm:text-base">
+                <p>Also… I’m kind of getting scared of the darkness. It will only get darker from here—we entered what’s known as</p>
+                <p class="dive-title mt-6 text-2xl sm:text-3xl">The Bathypelagic Zone.</p>
+                <p class="mt-6">
+                  Nicknamed the <span class="dive-redact">Midnight Zone</span>, no sunlight can penetrate this far. Light has to be created artificially.
+                  Despite what many people think, it is not silent. It is very quiet—but very much alive.
+                </p>
+              </div>
+
+              <div class="dive-frame mt-8 max-w-2xl p-5 sm:p-6">
+                <div class="flex items-center justify-between text-xs uppercase tracking-[0.1em] text-dive-paper/60">
+                  <label for="night-vision">How about we unlock night vision?</label>
+                  <output class="text-dive-warning" data-night-vision-output>12%</output>
+                </div>
+                <div class="mt-5 flex items-center gap-4 text-[10px] uppercase text-dive-paper/35">
+                  <span>Off</span>
+                  <input
+                    class="dive-range min-h-11 flex-1 cursor-pointer"
+                    id="night-vision"
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="12"
+                    aria-describedby="night-vision-help"
+                    data-night-vision
+                  />
+                  <span>Max</span>
+                </div>
+                <p class="mt-2 text-center text-[10px] uppercase tracking-[0.14em] text-dive-paper/30" id="night-vision-help">Drag slider to adjust both specimens</p>
+              </div>
+            </div>
+
+            <figure class="relative mt-10 min-h-[30rem] overflow-hidden lg:mt-0">
+              <img
+                class="dive-vision-image absolute inset-0 h-full w-full object-cover"
+                src="../../Draw ups/Bathyepalegic zone/Images/deepseaanglerfish.jpg"
+                alt="A deep-sea anglerfish emerging from the darkness"
+              />
+              <div class="dive-vision-curtain pointer-events-none absolute inset-0"></div>
+              <figcaption class="absolute bottom-4 right-4 text-[10px] uppercase tracking-[0.16em] text-dive-paper/35">Unresolved shape / 41 m</figcaption>
+            </figure>
+          </section>
+
+          <section class="grid gap-10 border-b border-dive-paper/20 py-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-14" aria-labelledby="angler-title">
+            <div>
+              <h2 class="dive-title text-3xl sm:text-4xl">Eerie creatures…</h2>
+              <p class="dive-copy mt-7 max-w-xl text-sm sm:text-base">
+                Creatures here produce their own bioluminescent light. The most known example you’ve probably heard of is the
+              </p>
+              <h3 class="dive-title mt-6 text-3xl" id="angler-title">Anglerfish.</h3>
+              <p class="dive-copy mt-6 max-w-xl text-sm sm:text-base">
+                Famous for the glowing rod protruding from its forehead, it uses bioluminescence to lure confused prey through pitch darkness.
+                Females of some species are massive compared with the males, which fuse to them as tiny parasites just to ensure they can mate.
+              </p>
+            </div>
+
+            <figure class="dive-frame relative min-h-[34rem] overflow-hidden">
+              <img
+                class="dive-vision-image absolute inset-0 h-full w-full object-cover"
+                src="../../Draw ups/Bathyepalegic zone/Images/deepseaanglerfish.jpg"
+                alt="A deep-sea anglerfish facing the camera with its mouth open and lure glowing"
+              />
+              <div class="dive-vision-curtain pointer-events-none absolute inset-0"></div>
+              <figcaption class="absolute inset-x-0 bottom-0 bg-dive-black/80 p-4 text-[10px] uppercase tracking-[0.16em] text-dive-warning">Specimen 01 / predatory lure</figcaption>
+            </figure>
+          </section>
+
+          <section class="grid gap-10 py-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-14" aria-labelledby="atolla-title">
+            <figure class="dive-frame relative min-h-[36rem] overflow-hidden">
+              <img
+                class="dive-vision-image absolute inset-0 h-full w-full object-cover"
+                src="../../Draw ups/Bathyepalegic zone/Images/antolla jellyfish.jpg"
+                alt="An Atolla jellyfish glowing electric blue against dark water"
+              />
+              <div class="dive-vision-curtain pointer-events-none absolute inset-0"></div>
+              <figcaption class="absolute inset-x-0 bottom-0 bg-dive-black/80 p-4 text-[10px] uppercase tracking-[0.16em] text-dive-warning">Specimen 02 / alarm display</figcaption>
+            </figure>
+
+            <div>
+              <p class="text-xs uppercase tracking-[0.14em] text-dive-paper/45">A really unique species here is the</p>
+              <h2 class="dive-title mt-5 text-3xl sm:text-4xl" id="atolla-title">Atolla jellyfish.</h2>
+              <p class="dive-copy mt-7 text-sm sm:text-base">
+                It uses a brilliant defense system called a “burglar alarm.” When grabbed, it pinwheels bright flashing lights—not to scare its attacker,
+                but to call in a larger predator to eat whatever is attacking the jellyfish.
+              </p>
+              <blockquote class="dive-frame mt-8 p-6 text-lg leading-8 text-dive-paper/75">
+                “If I’m going down, you’re coming down with me.”
+                <span class="dive-title mt-4 block text-xl">— Atolla, probably</span>
+              </blockquote>
+            </div>
+          </section>
+
+          <footer class="flex justify-between border-t border-dive-paper/20 pt-5 text-[10px] uppercase tracking-[0.14em] text-dive-paper/35">
+            <span>Two signals archived</span>
+            <span class="text-dive-warning">More creatures below ↓</span>
+          </footer>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

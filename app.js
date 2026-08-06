@@ -8,11 +8,11 @@ const pages = [
   ["layers/first-layer/02-light.html", "Light"],
   ["layers/first-layer/03-reef.html", "Reef"],
   ["layers/second-layer/04-twilight.html", "Twilight"],
-  ["layers/second-layer/05-pressure.html", "Pressure"],
-  ["layers/second-layer/06-glow.html", "Glow"],
+  ["layers/second-layer/05-pressure.html", "Plastic snow"],
+  ["layers/second-layer/06-glow.html", "Twilight life"],
   ["layers/third-layer/07-descent.html", "Descent"],
-  ["layers/third-layer/08-adapt.html", "Adapt"],
-  ["layers/third-layer/09-snow.html", "Marine snow"],
+  ["layers/third-layer/08-lures.html", "Lures"],
+  ["layers/third-layer/09-sightings.html", "Sightings"],
   ["layers/fourth-layer/10-abyss.html", "Abyss"],
   ["layers/fourth-layer/11-vents.html", "Vents"],
   ["layers/fourth-layer/12-gate.html", "Explore"],
@@ -264,7 +264,7 @@ function observeDetailPages() {
       history.replaceState({ page: index }, "", pageUrl(index));
       document.title = `${twoDigits(index)} ${pages[index][1]} / Ocean Depths`;
     },
-    { threshold: 0.5 },
+    { rootMargin: "-42% 0px -42% 0px", threshold: 0 },
   );
 
   document.querySelectorAll(".story-page").forEach((section) => observer.observe(section));
@@ -295,6 +295,9 @@ async function loadLayer() {
 
     sections.forEach(prepareSection);
     document.querySelector("main").replaceChildren(...sections, createExitSection(layerEnd));
+    document.dispatchEvent(
+      new CustomEvent("ocean:layer-ready", { detail: { layerStart, layerEnd } }),
+    );
     document.querySelector(`#page-${currentPage + 1}`).scrollIntoView();
     requestAnimationFrame(() => document.documentElement.classList.add("scroll-smooth"));
 

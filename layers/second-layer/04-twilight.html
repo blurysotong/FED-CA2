@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="An introduction to the ocean's twilight zone, where sunlight fades between 200 and 1,000 metres."
+      content="Enter the mesopelagic twilight zone, where faint sunlight, immense fish biomass, and marine snow shape the food web."
     />
     <title>04 Twilight / Ocean Depths</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,14 +23,12 @@
         class="story-page relative min-h-svh overflow-hidden bg-gradient-to-b from-[#052c39] to-[#042531]"
         id="page-4"
       >
-        <div
-          class="absolute right-[12%] top-[18%] h-24 w-px bg-gradient-to-b from-signal/70 to-transparent"
-          aria-hidden="true"
-        ></div>
-        <div
-          class="absolute -left-12 bottom-24 h-40 w-40 rounded-full border border-paper/10"
-          aria-hidden="true"
-        ></div>
+        <div class="absolute inset-0 opacity-40" aria-hidden="true">
+          <span class="absolute left-[8%] top-[28%] size-1 rounded-full bg-signal"></span>
+          <span class="absolute left-[22%] top-[62%] size-0.5 rounded-full bg-paper"></span>
+          <span class="absolute right-[18%] top-[16%] size-1.5 rounded-full bg-paper/70"></span>
+          <span class="absolute right-[7%] top-[70%] size-1 rounded-full bg-coral"></span>
+        </div>
 
         <div class="relative mx-auto flex min-h-svh max-w-7xl flex-col px-6 py-8 sm:px-10 lg:px-16">
           <header class="flex items-start justify-between gap-6 border-b border-paper/20 pb-4 text-xs uppercase tracking-[0.24em]">
@@ -38,49 +36,64 @@
             <p class="text-right text-paper/70">200–1,000 m<br />Mesopelagic zone</p>
           </header>
 
-          <div class="grid flex-1 items-center gap-10 py-14 lg:grid-cols-[1.35fr_0.65fr] lg:gap-20">
+          <div class="grid flex-1 items-center gap-10 py-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             <div>
-              <p class="mb-5 text-xs uppercase tracking-[0.3em] text-coral">Light becomes a trace</p>
-              <h1 class="font-serif text-6xl leading-[0.9] sm:text-7xl lg:text-9xl">
-                Twilight
+              <p class="mb-5 text-xs uppercase tracking-[0.3em] text-coral">The last natural light</p>
+              <h1 class="font-serif text-6xl leading-[0.86] sm:text-7xl lg:text-9xl">
+                The<br /><span class="ml-[12%] text-signal">Twilight</span><br />
+                <span class="ml-[28%]">Zone</span>
               </h1>
               <p class="mt-8 max-w-2xl text-base leading-7 text-paper/80 sm:text-lg">
-                The mesopelagic is the ocean's dim middle layer. A little sunlight
-                reaches this far, but it is too weak for plants and algae to use
-                for photosynthesis.
+                The mesopelagic may contain as much as <strong class="font-medium text-paper">95% of the world's fish biomass</strong>.
+                It is also the final ocean zone reached by sunlight, although the
+                blue glow here is too faint to support photosynthesis.
               </p>
+
+              <div class="mt-8 grid max-w-2xl grid-cols-2 gap-px bg-paper/20">
+                <div class="bg-[#052936] p-5">
+                  <p class="font-serif text-4xl text-signal">95%</p>
+                  <p class="mt-2 text-xs leading-5 text-paper/60">Estimated share of global fish biomass found in the mesopelagic.</p>
+                </div>
+                <div class="bg-[#052936] p-5">
+                  <p class="font-serif text-4xl text-coral">0</p>
+                  <p class="mt-2 text-xs leading-5 text-paper/60">Usable photosynthetic light below this point.</p>
+                </div>
+              </div>
             </div>
 
-            <aside
-              class="border border-paper/20 bg-ink/20 p-6 backdrop-blur-sm sm:p-8"
-              aria-labelledby="twilight-facts"
-            >
-              <h2 id="twilight-facts" class="font-serif text-3xl text-signal">
-                What changes here?
-              </h2>
-              <dl class="mt-6 divide-y divide-paper/15">
-                <div class="py-4">
-                  <dt class="text-xs uppercase tracking-[0.2em] text-coral">Depth</dt>
-                  <dd class="mt-2 leading-6 text-paper/80">About 200 to 1,000 metres below the surface.</dd>
-                </div>
-                <div class="py-4">
-                  <dt class="text-xs uppercase tracking-[0.2em] text-coral">Sunlight</dt>
-                  <dd class="mt-2 leading-6 text-paper/80">Faint blue light remains, but daytime feels like dusk.</dd>
-                </div>
-                <div class="py-4">
-                  <dt class="text-xs uppercase tracking-[0.2em] text-coral">Life</dt>
-                  <dd class="mt-2 leading-6 text-paper/80">Many animals have large eyes or dark bodies to survive unseen.</dd>
-                </div>
-              </dl>
-            </aside>
+            <figure class="relative border border-paper/20 bg-ink/30 p-3">
+              <img
+                class="h-64 w-full object-cover opacity-80 sm:h-80 lg:h-[26rem]"
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Marine%20snow.jpg"
+                alt="Particles of marine snow drifting through dark ocean water"
+              />
+              <figcaption class="p-5 sm:p-6">
+                <p class="text-xs uppercase tracking-[0.24em] text-coral">Food falls from above</p>
+                <h2 class="mt-3 font-serif text-3xl text-signal">Marine snow</h2>
+                <p class="mt-4 text-sm leading-6 text-paper/70">
+                  With photosynthesis impossible, life depends heavily on a continuous
+                  shower of dead organisms, waste, and organic debris sinking from the
+                  surface. Plastic can join this “snow”, carrying pollution directly
+                  into the twilight-zone food web.
+                </p>
+                <a
+                  class="mt-4 inline-flex border-b border-paper/30 pb-1 text-[10px] uppercase tracking-wider text-paper/50 hover:text-signal"
+                  href="https://commons.wikimedia.org/wiki/File:Marine_snow.jpg"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Image source: Wikimedia Commons ↗
+                </a>
+              </figcaption>
+            </figure>
           </div>
 
           <footer class="flex items-end justify-between gap-6 border-t border-paper/20 pt-4">
             <p class="max-w-sm text-xs leading-5 text-paper/60">
-              Keep descending to feel how the weight of the ocean changes life.
+              When plastic sinks with marine snow, it can become impossible for animals to avoid.
             </p>
             <p class="text-right text-xs uppercase tracking-[0.24em] text-signal">
-              Scroll<br /><span class="text-paper">Pressure ↓</span>
+              Scroll<br /><span class="text-paper">Plastic snow ↓</span>
             </p>
           </footer>
         </div>
