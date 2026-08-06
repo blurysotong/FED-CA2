@@ -115,12 +115,13 @@ function createProgress() {
   document.body.insertAdjacentHTML(
     "afterbegin",
     `
-      <div class="directory-progress pointer-events-none fixed bottom-0 left-[7%] top-16 z-20 opacity-0 md:left-1/4" aria-hidden="true">
-        <div class="absolute inset-y-0 w-px bg-paper/25"></div>
-        <div class="progress-fill absolute inset-y-0 w-px origin-top bg-signal"></div>
-        <div class="progress-marker absolute top-0 grid h-8 w-16 place-items-center border border-signal bg-[#061820] text-[9px] text-signal">
+      <div class="directory-progress pointer-events-none fixed bottom-0 left-[7%] top-16 z-20 w-16 -translate-x-1/2 opacity-0 md:left-1/4" aria-hidden="true">
+        <div class="absolute inset-y-0 left-1/2 w-px bg-paper/25"></div>
+        <div class="progress-fill absolute inset-y-0 left-1/2 w-px origin-top bg-signal"></div>
+        <div class="progress-marker absolute left-1/2 top-0 grid h-8 w-16 place-items-center border border-signal bg-[#061820] text-[9px] text-signal">
           <span id="depth-status">01 / 12</span>
         </div>
+        <input class="progress-control absolute inset-0 z-10 h-full w-full opacity-0" type="range" min="0" max="100" step="1" value="0" aria-label="Directory progress" aria-valuetext="01 of 12" tabindex="-1" />
       </div>
     `,
   );
@@ -168,23 +169,68 @@ function updateMenu(index) {
   });
 }
 
-function updateProgress() {
+function getProgressMetrics() {
   const firstSection = document.querySelector("#summary-1");
   const lastSection = document.querySelector("#summary-12");
-  const fill = document.querySelector(".progress-fill");
-  const marker = document.querySelector(".progress-marker");
-  const progressRail = document.querySelector(".directory-progress");
-
-  if (!firstSection || !lastSection || !fill || !marker || !progressRail) return;
+  if (!firstSection || !lastSection) return null;
 
   const start = firstSection.offsetTop;
   const end = lastSection.offsetTop + lastSection.offsetHeight - window.innerHeight;
-  const progress = Math.min(Math.max((window.scrollY - start) / Math.max(end - start, 1), 0), 1);
-  const markerDistance = Math.max(window.innerHeight - 112, 0);
+  return { start, distance: Math.max(end - start, 1) };
+}
 
-  progressRail.classList.toggle("opacity-0", window.scrollY < start - 1);
+function clampProgress(progress) {
+  return Math.min(Math.max(progress, 0), 1);
+}
+
+function updateProgress() {
+  const fill = document.querySelector(".progress-fill");
+  const marker = document.querySelector(".progress-marker");
+  const progressRail = document.querySelector(".directory-progress");
+  const progressControl = document.querySelector(".progress-control");
+  const metrics = getProgressMetrics();
+
+  if (!metrics || !fill || !marker || !progressRail || !progressControl) return;
+
+  const progress = clampProgress((window.scrollY - metrics.start) / metrics.distance);
+  const markerDistance = Math.max(progressRail.offsetHeight - marker.offsetHeight, 0);
+  const visible = window.scrollY >= metrics.start - 1;
+
+  progressRail.classList.toggle("opacity-0", !visible);
+  progressRail.classList.toggle("pointer-events-none", !visible);
+  progressControl.tabIndex = visible ? 0 : -1;
+  progressRail.setAttribute("aria-hidden", String(!visible));
+  progressControl.value = String(Math.round(progress * 100));
+  progressControl.setAttribute(
+    "aria-valuetext",
+    `${twoDigits(Math.round(progress * (pages.length - 1)))} of 12`,
+  );
   fill.style.transform = `scaleY(${progress})`;
-  marker.style.transform = `translate(-50%, ${16 + progress * markerDistance}px)`;
+  marker.style.transform = `translate(-50%, ${progress * markerDistance}px)`;
+}
+
+function scrollToProgress(progress, behavior = "auto") {
+  const metrics = getProgressMetrics();
+  if (!metrics) return;
+
+  window.scrollTo({
+    top: metrics.start + clampProgress(progress) * metrics.distance,
+    behavior,
+  });
+}
+
+function enableProgressNavigation() {
+  const progressControl = document.querySelector(".progress-control");
+  if (!progressControl) return;
+
+  progressControl.addEventListener("input", () => {
+    document.documentElement.classList.remove("scroll-smooth");
+    scrollToProgress(progressControl.valueAsNumber / 100);
+  });
+
+  progressControl.addEventListener("change", () => {
+    requestAnimationFrame(() => document.documentElement.classList.add("scroll-smooth"));
+  });
 }
 
 function requestProgressUpdate() {
@@ -311,6 +357,7 @@ async function loadLayer() {
 function startDirectory() {
   history.scrollRestoration = "manual";
   createProgress();
+  enableProgressNavigation();
   document.querySelectorAll("main > section").forEach((section) => section.classList.add("snap-start"));
   document.documentElement.classList.add("snap-y", "snap-proximity");
   observeDirectory();

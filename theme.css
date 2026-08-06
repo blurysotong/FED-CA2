@@ -44,6 +44,18 @@
   transform: translate(-50%, 1rem);
 }
 
+.progress-control {
+  cursor: ns-resize;
+  direction: ltr;
+  touch-action: none;
+  writing-mode: vertical-lr;
+}
+
+.directory-progress:has(.progress-control:focus-visible) .progress-marker {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 0.25rem;
+}
+
 .dive-page {
   --night-vision: 0.12;
   isolation: isolate;
