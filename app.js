@@ -4,18 +4,18 @@ let currentPage = Number(document.body.dataset.page || 1) - 1;
 let progressFrame;
 
 const pages = [
-  ["layers/first-layer/01-surface.html", "Surface"],
-  ["layers/first-layer/02-light.html", "Light"],
-  ["layers/first-layer/03-reef.html", "Reef"],
+  ["layers/first-layer/01-surface.html", "Sunlight Zone"],
+  ["layers/first-layer/02-life.html", "Life & food web"],
+  ["layers/first-layer/03-impact.html", "People & impact"],
   ["layers/second-layer/04-twilight.html", "Twilight"],
   ["layers/second-layer/05-pressure.html", "Plastic snow"],
   ["layers/second-layer/06-glow.html", "Twilight life"],
   ["layers/third-layer/07-descent.html", "Descent"],
   ["layers/third-layer/08-lures.html", "Lures"],
   ["layers/third-layer/09-sightings.html", "Sightings"],
-  ["layers/fourth-layer/10-abyss.html", "Abyss"],
-  ["layers/fourth-layer/11-vents.html", "Vents"],
-  ["layers/fourth-layer/12-gate.html", "Explore"],
+  ["layers/fourth-layer/10-abyss.html", "Welcome to the Abyss"],
+  ["layers/fourth-layer/11-marine-snow.html", "The long fall"],
+  ["layers/fourth-layer/12-locals.html", "Life in the void"],
 ];
 
 const chapters = [
@@ -26,6 +26,9 @@ const chapters = [
 ];
 
 const depthStops = [0, 200, 1000, 4000, 6000];
+const researchSubDepth = 3346;
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+let cancelProgressVehicleTransition;
 
 function twoDigits(index) {
   return String(index + 1).padStart(2, "0");
@@ -117,11 +120,32 @@ function createProgress() {
   document.body.insertAdjacentHTML(
     "afterbegin",
     `
-      <div class="directory-progress pointer-events-none fixed bottom-0 left-[7%] top-16 z-20 w-16 -translate-x-1/2 opacity-0 md:left-1/4" aria-hidden="true">
+      <div class="directory-progress pointer-events-none fixed bottom-0 left-[15%] top-16 z-20 w-16 -translate-x-1/2 opacity-0 md:left-1/4" aria-hidden="true">
         <div class="absolute inset-y-0 left-1/2 w-px bg-paper/25"></div>
         <div class="progress-fill absolute inset-y-0 left-1/2 w-px origin-top bg-signal"></div>
-        <div class="progress-marker absolute left-1/2 top-0 grid h-8 w-16 place-items-center border border-signal bg-[#061820] text-[9px] text-signal">
-          <span id="depth-status">0 m</span>
+        <div class="progress-marker absolute left-1/2 top-0 text-signal" data-vehicle="experimental">
+          <span class="progress-vehicle" aria-hidden="true">
+            <svg class="progress-sub progress-sub-experimental" viewBox="0 0 170 72">
+              <path class="progress-sub-hull" d="M42 18h65c16 0 28 6 35 17-7 11-19 17-35 17H42Z" />
+              <path class="progress-sub-fairing" d="M94 14h58l-9 12h10l-23 23h-25c9-7 14-18 12-35Z" />
+              <path class="progress-sub-cap" d="M42 18c-14 0-24 7-24 17s10 17 24 17Z" />
+              <path d="M42 16v38M47 18v34M18 25 10 29v12l8 4M10 29c-5 2-5 10 0 12" />
+              <ellipse class="progress-sub-viewport" cx="11" cy="35" rx="4" ry="5" />
+              <path d="M82 18V9h14v9M80 9h18M89 9V5M126 47h17v9h-17M129 50h11M116 18h18" />
+              <path d="M15 55h143v13H15ZM24 55l13-6M149 55l-14-7M41 55v13M132 55v13M15 62h143" />
+              <path class="progress-sub-detail" d="M50 23h47M50 47h47M106 19c6 9 6 23 0 32" />
+              <text class="progress-sub-name" x="74" y="30" text-anchor="middle">OCEANGATE TITAN</text>
+              <text class="progress-depth-readout" x="74" y="43" text-anchor="middle">0 m</text>
+            </svg>
+            <svg class="progress-sub progress-sub-research" viewBox="0 0 120 50">
+              <path d="M11 31c0-11 8-20 20-20 8 0 14 4 18 10h43l18 9-18 9H45c-4 4-9 6-15 6-11 0-19-5-19-14Z" />
+              <path d="M12 42 8 47h94M26 44v3M87 39v8M63 21V9h12M94 35l15 11M106 30h9" />
+              <circle cx="27" cy="25" r="5" />
+              <text class="progress-depth-readout" x="70" y="33" text-anchor="middle">0 m</text>
+            </svg>
+            <span class="progress-pressure-flash"></span>
+          </span>
+          <span class="progress-vehicle-label">OceanGate Titan</span>
         </div>
         <input class="progress-control absolute inset-0 z-10 h-full w-full opacity-0" type="range" min="0" max="100" step="1" value="0" aria-label="Directory depth" aria-valuetext="0 metres" tabindex="-1" />
       </div>
@@ -204,7 +228,55 @@ function depthAtPosition(position, anchors) {
   const depth =
     depthStops[segment] +
     segmentProgress * (depthStops[segment + 1] - depthStops[segment]);
-  return Math.round(depth / 10) * 10;
+  return Math.round(depth);
+}
+
+function setProgressVehicle(marker, vehicle) {
+  if (marker.dataset.vehicle === vehicle) return;
+  marker.dataset.vehicle = vehicle;
+  marker.querySelector(".progress-vehicle-label").textContent =
+    vehicle === "research" ? "research sub" : "OceanGate Titan";
+}
+
+function stopProgressVehicleTransition(marker) {
+  cancelProgressVehicleTransition?.();
+  cancelProgressVehicleTransition = undefined;
+  delete marker.dataset.transition;
+}
+
+function startProgressVehicleTransition(marker) {
+  if (reducedMotion.matches) {
+    setProgressVehicle(marker, "research");
+    return;
+  }
+
+  const experimentalSub = marker.querySelector(".progress-sub-experimental");
+  marker.dataset.transition = "imploding";
+
+  const finishTransition = () => {
+    delete marker.dataset.transition;
+    setProgressVehicle(marker, "research");
+    cancelProgressVehicleTransition = undefined;
+    requestProgressUpdate();
+  };
+
+  experimentalSub.addEventListener("animationend", finishTransition, { once: true });
+  cancelProgressVehicleTransition = () => {
+    experimentalSub.removeEventListener("animationend", finishTransition);
+  };
+}
+
+function updateProgressVehicle(marker, depth) {
+  const beyondExperimentalLimit = depth >= researchSubDepth;
+
+  if (!beyondExperimentalLimit) {
+    stopProgressVehicleTransition(marker);
+    setProgressVehicle(marker, "experimental");
+    return;
+  }
+
+  if (marker.dataset.vehicle === "research" || marker.dataset.transition) return;
+  startProgressVehicleTransition(marker);
 }
 
 function updateProgress() {
@@ -218,7 +290,6 @@ function updateProgress() {
 
   const progress = clampProgress((window.scrollY - metrics.start) / metrics.distance);
   const depth = depthAtPosition(window.scrollY, metrics.depthAnchors);
-  const formattedDepth = depth.toLocaleString();
   const markerDistance = Math.max(progressRail.offsetHeight - marker.offsetHeight, 0);
   const visible = window.scrollY >= metrics.start - 1;
 
@@ -229,13 +300,23 @@ function updateProgress() {
   if (!progressControl.matches(":active")) {
     progressControl.value = String(Math.round(progress * 100));
   }
+  updateProgressVehicle(marker, depth);
+  const displayedDepth = marker.dataset.transition ? researchSubDepth : depth;
+  const formattedDepth = displayedDepth.toLocaleString();
+  document.querySelectorAll(".progress-depth-readout").forEach((readout) => {
+    readout.textContent = `${formattedDepth} m`;
+  });
+  const vehicleDescription = marker.dataset.transition
+    ? "OceanGate Titan submersible implosion"
+    : marker.dataset.vehicle === "research"
+      ? "research submersible"
+      : "OceanGate Titan submersible";
   progressControl.setAttribute(
     "aria-valuetext",
-    `${formattedDepth} metres`,
+    `${formattedDepth} metres, ${vehicleDescription}`,
   );
-  document.querySelector("#depth-status").textContent = `${formattedDepth} m`;
   fill.style.transform = `scaleY(${progress})`;
-  marker.style.transform = `translate(-50%, ${progress * markerDistance}px)`;
+  marker.style.setProperty("--marker-y", `${progress * markerDistance}px`);
 }
 
 function scrollToProgress(progress, behavior = "auto") {

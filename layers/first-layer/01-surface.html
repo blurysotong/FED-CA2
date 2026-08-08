@@ -3,80 +3,111 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
     <meta
       name="description"
-      content="Explore the ocean surface, where sunlight, air, and seawater meet."
+      content="Meet the Sunlight Zone, the warm and productive upper 200 metres of the ocean."
     />
-    <title>01 Surface / Ocean Depths</title>
+    <title>01 The Sunlight Zone / Ocean Depths</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600&family=Hachi+Maru+Pop&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../styles.css" />
     <script src="../../app.js" defer></script>
   </head>
-  <body class="bg-ink font-mono text-paper" data-page="1">
+  <body class="bg-ink font-mono text-paper" data-layer-theme="sunlight" data-page="1">
     <main>
-      <section
-        class="story-page relative min-h-svh bg-gradient-to-b from-[#0b6070] to-[#084252]"
-        id="page-1"
-      >
-        <div
-          class="mx-auto flex min-h-svh w-full max-w-6xl flex-col px-6 py-8 sm:px-10 lg:px-16"
-        >
-          <header
-            class="flex items-center justify-between border-b border-paper/30 pb-4 text-xs uppercase tracking-[0.2em]"
-          >
-            <p>Ocean depths</p>
-            <p>01 / 12 · First layer · 0 m</p>
+      <section class="story-page sunlight-page sunlight-overview relative min-h-svh overflow-hidden" id="page-1">
+        <div class="sunlight-rays" aria-hidden="true"></div>
+        <div class="sunlight-bubbles" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="sunlight-doodles" aria-hidden="true">
+          <span>✦</span><span>𓆝</span><span>♡</span><span>𓇼</span>
+        </div>
+
+        <div class="relative z-10 mx-auto flex min-h-svh w-full max-w-[92rem] flex-col px-5 py-8 sm:px-10 lg:px-16">
+          <header class="sunlight-header flex items-center justify-between gap-6 pb-5 text-[10px] uppercase tracking-[0.22em] sm:text-xs">
+            <p>Ocean field notes</p>
+            <p>01 / 12 · First layer · 0–200 m</p>
           </header>
 
-          <div class="grid flex-1 items-center gap-10 py-12 lg:grid-cols-2">
+          <div class="grid flex-1 items-center gap-12 py-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(22rem,0.95fr)] lg:gap-16">
             <div>
-              <p class="mb-4 text-sm uppercase tracking-[0.25em] text-signal">
-                The threshold
-              </p>
-              <h1
-                class="font-serif text-6xl leading-none sm:text-7xl lg:text-8xl"
-              >
-                Surface
+              <p class="sunlight-kicker">Warm water · full sunlight · low pressure</p>
+              <h1 class="sunlight-title mt-6 max-w-5xl font-display text-5xl leading-[0.95] sm:text-7xl lg:text-8xl">
+                The Sunlight Zone
               </h1>
-              <p class="mt-6 max-w-xl text-base leading-7 sm:text-lg">
-                The surface is the moving boundary between air and sea.
-                Sunlight enters the water here, while wind and waves keep the
-                upper ocean in constant motion.
-              </p>
+              <p class="mt-6 font-display text-lg text-sunlight-yellow sm:text-xl">also called the Epipelagic Zone</p>
+
+              <div class="mt-8 max-w-3xl space-y-5 text-pretty text-base leading-8 text-sunlight-foam/85 sm:text-lg">
+                <p>
+                  The Surface Layer stretches from the ocean's surface to about 200 metres deep. It receives enough light for plants and tiny organisms to perform photosynthesis, making it the ocean's most productive and diverse layer.
+                </p>
+                <p>
+                  If you have gone swimming, snorkelling, or taken a boat out to sea, you have already visited it. This is where most marine life lives—and where people interact with the ocean most.
+                </p>
+              </div>
+
+              <dl class="sunlight-fact-strip mt-10 grid gap-3 sm:grid-cols-3">
+                <div><dt>Light</dt><dd>Full sunlight</dd></div>
+                <div><dt>Temperature</dt><dd>10–30°C</dd></div>
+                <div><dt>Pressure</dt><dd>Lowest in the ocean</dd></div>
+              </dl>
             </div>
 
-            <aside
-              class="border border-paper/30 bg-ink/20 p-6 sm:p-8"
-              aria-label="Surface facts"
-            >
-              <h2 class="font-serif text-2xl">At a glance</h2>
-              <dl class="mt-6 divide-y divide-paper/20">
-                <div class="grid grid-cols-2 gap-4 py-4">
-                  <dt class="text-paper/70">Depth</dt>
-                  <dd class="text-right text-coral">0 metres</dd>
-                </div>
-                <div class="grid grid-cols-2 gap-4 py-4">
-                  <dt class="text-paper/70">Light</dt>
-                  <dd class="text-right">Brightest here</dd>
-                </div>
-                <div class="grid grid-cols-2 gap-4 py-4">
-                  <dt class="text-paper/70">Connection</dt>
-                  <dd class="text-right">Air meets sea</dd>
-                </div>
-              </dl>
+            <aside class="sunlight-depth-card" aria-label="Sunlight Zone depth illustration">
+              <div class="sunlight-sun" aria-hidden="true"><span>˶ᵔ ᵕ ᵔ˶</span></div>
+              <p class="sunlight-sticker sunlight-sticker-top">sunlight powers life!</p>
+              <div class="sunlight-depth-water" aria-hidden="true">
+                <span class="sunlight-wave sunlight-wave-one"></span>
+                <span class="sunlight-wave sunlight-wave-two"></span>
+                <span class="sunlight-plankton sunlight-plankton-one">✦</span>
+                <span class="sunlight-plankton sunlight-plankton-two">·</span>
+                <span class="sunlight-plankton sunlight-plankton-three">✧</span>
+              </div>
+              <div class="sunlight-depth-scale">
+                <span><strong>0 m</strong> surface</span>
+                <span><strong>100 m</strong> light fades</span>
+                <span><strong>200 m</strong> twilight begins</span>
+              </div>
             </aside>
           </div>
 
-          <footer
-            class="flex items-center gap-3 border-t border-paper/30 pt-4 text-xs uppercase tracking-[0.2em]"
-          >
+          <section class="pb-14" aria-labelledby="characteristics-title">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p class="sunlight-kicker">Why life thrives here</p>
+                <h2 class="mt-3 font-display text-3xl sm:text-4xl" id="characteristics-title">Three bright advantages</h2>
+              </div>
+              <p class="max-w-md text-sm leading-6 text-sunlight-foam/65">Every current, wave, and ray helps keep the upper ocean alive.</p>
+            </div>
+
+            <div class="mt-7 grid gap-4 lg:grid-cols-3">
+              <article class="sunlight-note-card">
+                <span aria-hidden="true">☀️</span>
+                <h3>Energy from above</h3>
+                <p>Sunlight lets phytoplankton and marine plants photosynthesise, creating the foundation of the entire ocean food chain.</p>
+              </article>
+              <article class="sunlight-note-card">
+                <span aria-hidden="true">🌊</span>
+                <h3>Always in motion</h3>
+                <p>Waves, tides, and currents constantly spread nutrients and oxygen through the warm upper water.</p>
+              </article>
+              <article class="sunlight-note-card">
+                <span aria-hidden="true">🐠</span>
+                <h3>Room to flourish</h3>
+                <p>Relatively low pressure and abundant food make this a comfortable home for an extraordinary variety of marine life.</p>
+              </article>
+            </div>
+          </section>
+
+          <footer class="sunlight-footer flex items-center justify-between gap-6 py-5 text-[10px] uppercase tracking-[0.2em] sm:text-xs">
+            <p>Next: life in the sunlight</p>
             <span aria-hidden="true">↓</span>
-            <p>Scroll to follow the light</p>
           </footer>
         </div>
       </section>

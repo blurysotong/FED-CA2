@@ -3,84 +3,107 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A beginner-friendly introduction to the cold, quiet abyssal plains." />
-    <title>Page 10 / The Abyss</title>
+    <link rel="icon" href="data:," />
+    <meta
+      name="description"
+      content="Step into the abyssal zone, Earth’s vast neighbourhood of permanent darkness, cold water, and immense pressure."
+    />
+    <title>10 Welcome to the Abyss / Ocean Depths</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600&family=Eater&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../styles.css" />
     <script src="../../app.js" defer></script>
   </head>
-  <body class="bg-ink font-mono text-paper" data-page="10">
+  <body class="bg-ink font-mono text-paper" data-layer-theme="abyss" data-page="10">
     <main>
-      <section class="story-page relative min-h-svh bg-gradient-to-b from-[#020e15] to-[#020b11]"
-        id="page-10">
-        <div class="mx-auto flex min-h-svh w-full max-w-6xl flex-col px-6 py-10 md:px-10">
-          <header class="flex items-center justify-between gap-4 border-b border-white/20 pb-5 text-xs tracking-widest text-paper/60">
-            <p>
-              <span class="text-signal">10</span>
-              / 12 · Fourth layer
-            </p>
-            <p class="text-right">4,000–6,000 m</p>
+      <section class="story-page abyss-page abyss-overview relative min-h-svh overflow-hidden" id="page-10">
+        <div class="abyss-current-lines" aria-hidden="true"></div>
+        <div class="abyss-orbit abyss-orbit-right" aria-hidden="true"></div>
+
+        <div class="abyss-shell relative z-10 mx-auto flex min-h-svh w-full max-w-[92rem] flex-col px-5 py-8 sm:px-10 lg:px-16">
+          <header class="abyss-topline flex items-center justify-between gap-6 py-4 text-[10px] uppercase tracking-[0.18em] sm:text-xs">
+            <p>Abyssal descent log</p>
+            <p>10 / 12 · Fourth layer · 4,000–6,000 m</p>
           </header>
 
-          <div class="grid flex-1 items-center gap-8 py-12 lg:grid-cols-2 lg:gap-16">
-            <article class="max-w-3xl">
-              <p class="mb-4 text-xs uppercase tracking-[0.25em] text-coral">
-                The abyssal zone
-              </p>
-              <h1 class="font-display text-5xl leading-tight text-paper sm:text-7xl">
-                The quiet floor
+          <div class="grid flex-1 items-center gap-12 py-14 lg:grid-cols-[minmax(0,0.92fr)_minmax(24rem,1.08fr)] lg:gap-16">
+            <article>
+              <p class="abyss-kicker">No signal · no sunlight · six kilometres of water overhead</p>
+              <h1 class="mt-6 max-w-4xl text-balance font-display text-5xl leading-[0.92] sm:text-7xl lg:text-8xl">
+                Welcome to the Abyss
               </h1>
-              <p class="mt-6 max-w-2xl text-base leading-relaxed text-paper/70 sm:text-lg">
-                Far below the sunlit ocean, broad abyssal plains stretch across
-                the seafloor. The water here is cold, dark, and usually very
-                still, yet small animals continue to find food and shelter.
+              <p class="mt-5 max-w-2xl text-pretty text-base leading-8 text-abyss-foam/80 sm:text-lg">
+                Below 4,000 metres, the last trace of sunlight is long gone. Water presses in from every direction, the temperature hovers just above freezing, and the seafloor disappears into a darkness larger than any landscape on land.
               </p>
+              <p class="mt-5 max-w-2xl text-pretty text-sm leading-7 text-abyss-foam/65 sm:text-base">
+                Its name comes from the Greek <em>abyssos</em>, meaning “bottomless.” We know its depth now. We still do not know everything moving through it.
+              </p>
+
+              <dl class="abyss-stat-grid mt-9 grid gap-3 sm:grid-cols-3">
+                <div><dt>Depth</dt><dd>4–6 km</dd></div>
+                <div><dt>Temperature</dt><dd>2–3°C</dd></div>
+                <div><dt>Natural sunlight</dt><dd>None</dd></div>
+              </dl>
             </article>
 
-            <aside class="border border-signal/30 bg-ink/80 p-6" aria-labelledby="abyss-facts">
-              <h2 class="font-display text-2xl text-signal" id="abyss-facts">
-                Abyss at a glance
-              </h2>
-              <dl class="mt-6 grid gap-5">
-                <div class="border-t border-white/20 pt-4">
-                  <dt class="text-xs uppercase tracking-widest text-coral">
-                    Depth
-                  </dt>
-                  <dd class="mt-2 text-sm leading-relaxed text-paper/70">
-                    Abyssal plains are commonly found between 4,000 and 6,000
-                    metres below the surface.
-                  </dd>
-                </div>
-                <div class="border-t border-white/20 pt-4">
-                  <dt class="text-xs uppercase tracking-widest text-coral">
-                    Conditions
-                  </dt>
-                  <dd class="mt-2 text-sm leading-relaxed text-paper/70">
-                    Sunlight does not reach this depth. Temperatures stay near
-                    freezing, and the pressure is immense.
-                  </dd>
-                </div>
-                <div class="border-t border-white/20 pt-4">
-                  <dt class="text-xs uppercase tracking-widest text-coral">
-                    Food
-                  </dt>
-                  <dd class="mt-2 text-sm leading-relaxed text-paper/70">
-                    Many animals depend on tiny particles that drift down from
-                    the ocean above.
-                  </dd>
-                </div>
-              </dl>
-            </aside>
+            <figure class="abyss-hero-frame">
+              <img
+                class="h-full w-full object-cover"
+                src="../../Images/Abyssal zone/dumbo-octopus-swimming.webp"
+                alt="A pale dumbo octopus gliding over a turquoise deep-sea floor"
+              />
+              <figcaption>
+                <span>Visual contact · Dumbo octopus</span>
+                <span>distance unknown</span>
+              </figcaption>
+            </figure>
           </div>
 
-          <footer class="flex items-center gap-4 border-t border-white/20 pt-5 text-xs uppercase tracking-widest text-paper/60">
-            <span class="h-px w-16 bg-signal" aria-hidden="true"></span>
-            <p>Scroll to find warmth in the dark</p>
+          <section class="pb-14" aria-labelledby="conditions-title">
+            <div class="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
+              <div>
+                <p class="abyss-kicker">Environmental warning</p>
+                <h2 class="mt-3 text-4xl text-abyss-yellow sm:text-5xl" id="conditions-title">
+                  The pressure leaves nothing unchanged
+                </h2>
+              </div>
+              <p class="max-w-2xl text-sm leading-7 text-abyss-foam/65">
+                At 4,000–6,000 metres, pressure is roughly 400–600 times greater than at the surface. Deep currents still carry dissolved oxygen here, but no sunlight means no local photosynthesis.
+              </p>
+            </div>
+
+            <div class="abyss-condition-grid mt-8 grid gap-4 lg:grid-cols-3">
+              <article>
+                <span aria-hidden="true">02°</span>
+                <h3>Near-freezing. Always.</h3>
+                <p>Temperature barely changes through the year, usually hovering just a few degrees above freezing.</p>
+              </article>
+              <article>
+                <span aria-hidden="true">×500</span>
+                <h3>The weight of the ocean</h3>
+                <p>Soft bodies and pressure-stable chemistry help residents function without being crushed by the water above.</p>
+              </article>
+              <article>
+                <span aria-hidden="true">83%</span>
+                <h3>Most of the ocean has no sky</h3>
+                <p>Abyssal depths account for roughly 83% of the ocean’s area. Darkness is not the exception here. It is the dominant habitat.</p>
+              </article>
+            </div>
+          </section>
+
+          <div class="abyss-depth-ribbon" aria-label="Depth range from the surface to the abyssal zone">
+            <span>0 m · sunlight</span>
+            <span>1,000 m · midnight</span>
+            <strong>4,000–6,000 m · you are here</strong>
+          </div>
+
+          <footer class="abyss-footer mt-10 flex items-center justify-between gap-6 py-5 text-[10px] uppercase tracking-[0.16em] sm:text-xs">
+            <span>Continue descent · follow what falls</span>
+            <span aria-hidden="true">↓</span>
           </footer>
         </div>
       </section>
