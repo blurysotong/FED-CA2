@@ -121,8 +121,8 @@ function createProgress() {
     "afterbegin",
     `
       <div class="directory-progress pointer-events-none fixed bottom-0 top-16 z-20 w-16 -translate-x-1/2 opacity-0" aria-hidden="true">
-        <div class="absolute inset-y-0 left-1/2 w-px bg-paper/25"></div>
-        <div class="progress-fill absolute inset-y-0 left-1/2 w-px origin-top bg-signal"></div>
+        <div class="progress-track absolute inset-y-0 left-1/2 w-px bg-paper/25"></div>
+        <div class="progress-fill absolute left-1/2 top-0 h-full w-px bg-signal"></div>
         <div class="progress-marker absolute left-1/2 top-0 text-signal" data-vehicle="experimental">
           <span class="progress-vehicle" aria-hidden="true">
             <svg class="progress-sub progress-sub-experimental" viewBox="0 0 170 72">
@@ -315,8 +315,8 @@ function updateProgress() {
     "aria-valuetext",
     `${formattedDepth} metres, ${vehicleDescription}`,
   );
-  fill.style.transform = `scaleY(${progress})`;
-  marker.style.setProperty("--marker-y", `${progress * markerDistance}px`);
+  fill.style.height = `${progress * 100}%`;
+  progressRail.style.setProperty("--marker-y", `${progress * markerDistance}px`);
 }
 
 function scrollToProgress(progress, behavior = "auto") {

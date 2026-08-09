@@ -60,16 +60,36 @@
 :root {
   --directory-progress-x: 15vw;
   --directory-marker-gutter: 5.5rem;
+  --progress-marker-height: 4rem;
+  --progress-line-gap: 0.3rem;
 }
 
 .directory-progress {
+  --marker-y: 1rem;
   left: var(--directory-progress-x);
+}
+
+.progress-track,
+.progress-fill {
+  --progress-line-mask: linear-gradient(
+    to bottom,
+    #000 0,
+    #000 calc(var(--marker-y) - var(--progress-line-gap)),
+    transparent var(--marker-y),
+    transparent calc(var(--marker-y) + var(--progress-marker-height)),
+    #000 calc(var(--marker-y) + var(--progress-marker-height) + var(--progress-line-gap)),
+    #000 100%
+  );
+  -webkit-mask-image: var(--progress-line-mask);
+  mask-image: var(--progress-line-mask);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 
 .progress-marker {
   display: grid;
   width: 9.6rem;
-  min-height: 4rem;
+  min-height: var(--progress-marker-height);
   place-items: center;
   gap: 0;
   overflow: visible;
@@ -96,6 +116,7 @@
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1.25;
+  filter: drop-shadow(0 0 0.16rem rgb(2 8 12 / 0.9));
   transform-origin: center;
 }
 
@@ -109,31 +130,31 @@
 }
 
 .progress-sub-experimental {
-  stroke-width: 1;
+  stroke-width: 1.2;
 }
 
 .progress-sub-hull {
   fill: currentColor;
-  fill-opacity: 0.09;
+  fill-opacity: 0.18;
 }
 
 .progress-sub-fairing {
   fill: currentColor;
-  fill-opacity: 0.05;
+  fill-opacity: 0.1;
 }
 
 .progress-sub-cap {
   fill: currentColor;
-  fill-opacity: 0.18;
+  fill-opacity: 0.28;
 }
 
 .progress-sub-viewport {
   fill: currentColor;
-  fill-opacity: 0.32;
+  fill-opacity: 0.45;
 }
 
 .progress-sub-detail {
-  opacity: 0.42;
+  opacity: 0.58;
 }
 
 .progress-sub-name {
@@ -143,7 +164,7 @@
   font-size: 0.24rem;
   font-weight: 500;
   letter-spacing: 0.07em;
-  opacity: 0.72;
+  opacity: 0.86;
 }
 
 .progress-sub-research {
