@@ -57,6 +57,15 @@
   }
 }
 
+:root {
+  --directory-progress-x: 15vw;
+  --directory-marker-gutter: 5.5rem;
+}
+
+.directory-progress {
+  left: var(--directory-progress-x);
+}
+
 .progress-marker {
   display: grid;
   width: 9.6rem;
@@ -284,6 +293,22 @@
 
   .progress-vehicle-label {
     letter-spacing: 0.07em;
+  }
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --directory-progress-x: 25vw;
+  }
+}
+
+@media (min-width: 64rem) {
+  .directory-page > .mx-auto {
+    max-width: none;
+    grid-template-columns:
+      calc(var(--directory-progress-x) - 4rem - var(--directory-marker-gutter))
+      minmax(0, 1fr);
+    column-gap: calc(var(--directory-marker-gutter) + var(--directory-marker-gutter));
   }
 }
 

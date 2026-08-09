@@ -120,7 +120,7 @@ function createProgress() {
   document.body.insertAdjacentHTML(
     "afterbegin",
     `
-      <div class="directory-progress pointer-events-none fixed bottom-0 left-[15%] top-16 z-20 w-16 -translate-x-1/2 opacity-0 md:left-1/4" aria-hidden="true">
+      <div class="directory-progress pointer-events-none fixed bottom-0 top-16 z-20 w-16 -translate-x-1/2 opacity-0" aria-hidden="true">
         <div class="absolute inset-y-0 left-1/2 w-px bg-paper/25"></div>
         <div class="progress-fill absolute inset-y-0 left-1/2 w-px origin-top bg-signal"></div>
         <div class="progress-marker absolute left-1/2 top-0 text-signal" data-vehicle="experimental">
